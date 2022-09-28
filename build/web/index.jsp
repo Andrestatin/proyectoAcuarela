@@ -4,6 +4,7 @@
     Author     : tatin
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -55,17 +56,18 @@
          </nav>  
         <div class="container mt-2">
             <div class="row">
+                <c:forEach var="o" items="${obras}">
                     <div class="col-sm-4">
                         <div class="card">
                             <div class="card-header">
-                               <label>titulo<label> 
+                               <label>${o.getTitulo()}<label> 
                             </div>
                             <div class="card-body">
-                                <i>precio</i>
-                                <img src="" width="220" height="200">
+                                <i>$.${o.getPrecio()}</i>
+                                <img src="ControladorIMG?id=${o.getId()}" width="220" height="200">
                             </div>
                             <div class="card-footer text-center">
-                                <label>descripcion</label>
+                                <label>${o.getDescripcion()}</label>
                                 <div>
                                     <a href="" class="btn btn-outline-warning">Agregar a carrito</a>
                                     <a href="" class="btn btn-outline-info">Pagar</a>
@@ -73,6 +75,7 @@
                             </div>
                         </div>
                     </div>
+                </c:forEach>    
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
