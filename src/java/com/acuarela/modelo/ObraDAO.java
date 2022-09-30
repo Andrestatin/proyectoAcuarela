@@ -17,6 +17,25 @@ public class ObraDAO {
    Conexion cn=new Conexion();
    PreparedStatement ps;
    ResultSet rsl;
+   public Obra listarId(int id){
+       String sql="select * from obra where id_obra= "+id;
+       Obra o=new Obra();
+       
+       try {
+            con=cn.getConnection();
+            ps=con.prepareStatement(sql);
+            rsl=ps.executeQuery();
+            while(rsl.next()){
+                o.setId(rsl.getInt("id_obra"));
+                o.setTitulo(rsl.getString("titulo"));
+                o.setDescripcion(rsl.getString("descripcion"));
+                o.setImagen(rsl.getBinaryStream("imagen"));
+                o.setPrecio(rsl.getDouble("precio"));
+            }
+       } catch (Exception e) {
+       }
+       return o;
+   }
     public List listar(){
         List<Obra>obras=new ArrayList();
         String sql="select * from obra";

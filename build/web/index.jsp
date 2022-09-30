@@ -11,7 +11,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link href="<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/6f5ad18ead.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     </head>
@@ -19,6 +20,7 @@
             <nav class="navbar" style="background-color: #e3f2fd;">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">Acuarela</a>
+              <a class="nav-link" href="Controlador?accion=Carrito"><i class="fas fa-cart-shopping">(<label style="color: orangered">${contador}</label>)</i>Carrito</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -31,7 +33,7 @@
                     <a class="nav-link" href="#">Arte</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link disabled">Carrito</a>
+                      
                   </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -64,13 +66,13 @@
                             </div>
                             <div class="card-body">
                                 <i>$.${o.getPrecio()}</i>
-                                <img src="ControladorIMG?id=${o.getId()}" width="220" height="200">
+                                <img src="ControladorIMG?id=${o.getId()}" width="140" height="170">
                             </div>
                             <div class="card-footer text-center">
                                 <label>${o.getDescripcion()}</label>
                                 <div>
-                                    <a href="" class="btn btn-outline-warning">Agregar a carrito</a>
-                                    <a href="" class="btn btn-outline-info">Pagar</a>
+                                    <a href="Controlador?accion=AgregarCarrito&id=${o.getId()}" class="btn btn-outline-warning">Agregar a carrito</a>
+                                    <a href="Controlador?accion=Pagar&id=${o.getId()}" class="btn btn-outline-info">Pagar</a>
                                 </div>
                             </div>
                         </div>
