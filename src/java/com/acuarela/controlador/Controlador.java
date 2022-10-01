@@ -78,6 +78,16 @@ public class Controlador extends HttpServlet {
                 request.setAttribute("contador",listaCarrito.size());
                 request.getRequestDispatcher("Controlador?accion=home").forward(request, response);
                 break;
+            case "Delete":
+                 //capturar id_obra que estamos enviando desde operaciones.js
+                int id_obra=Integer.parseInt(request.getParameter("ido"));
+                for (int i = 0; i < listaCarrito.size(); i++) {
+                    if(listaCarrito.get(i).getItem()==id_obra){
+                        listaCarrito.remove(i);
+                    }
+                }
+                request.getRequestDispatcher("Controlador?accion=Carrito").forward(request, response);
+                break;
             case "Carrito":
                   totalPagar=0.0;
                   //enviar lista del carrito

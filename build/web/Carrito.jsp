@@ -78,14 +78,14 @@
                                 <td>${carr.getItem()}</td>
                                 <td>${carr.getTitulo()}</td>
                                 <td>${carr.getDescripcion()}
-                                    <img src="ControladorIMG?id=${carr.getId_obra()}" width="100" height="100"
+                                    <img src="ControladorIMG?id=${carr.getId_obra()}" width="100" height="100">
                                 </td>
                                 <td>${carr.getPrecioCompra()}</td>
                                 <td>${carr.getCantidad()}</td>
                                 <td>${carr.getSubtotal()}</td>
                                 <td>
-                                    <input type="hidden" id="ido" value="${carr.getId_obra()}"
-                                    <a href="#" id="btnDelete" >eliminar</a>
+                                    <input type="hidden" id="ido" value="${carr.getItem()}">
+                                    <a href="Controlador?accion=Delete&ido=${carr.getItem()}" id="btnDelete" >eliminar</a>
                                 </td>
                             </tr>   
                             </c:forEach>
@@ -99,11 +99,11 @@
                         </div>
                         <div class="card-body">
                             <label>Subtotal:</label>
-                            <input type="text" value="$.${totalPagar}0" readonly="" class="form-control">
+                            <input type="text" value="$${totalPagar}0 Col." readonly="" class="form-control">
                             <label>Descuento:</label>
-                            <input type="text" value="$.0.00" readonly="" class="form-control">
+                            <input type="text" value="$0.00 Col." readonly="" class="form-control">
                             <label>Total Pagar:</label>
-                            <input type="text" value="$.${totalPagar}0" readonly="" class="form-control">
+                            <input type="text" value="$${totalPagar}0 Col." readonly="" class="form-control">
                         </div>
                         <div class="card-footer d-grid gap-2">
                             <a href="#" class="btn btn-outline-warning">Realizar Pago</a>
