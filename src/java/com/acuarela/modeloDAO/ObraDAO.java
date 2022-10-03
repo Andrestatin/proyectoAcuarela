@@ -1,6 +1,7 @@
-package com.acuarela.modelo;
+package com.acuarela.modeloDAO;
 
 import com.acuarela.configuracion.Conexion;
+import com.acuarela.modelo.Obra;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.InputStream;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
-public class ObraDAO {
+public class ObraDAO{
    Connection con; 
    Conexion cn=new Conexion();
    PreparedStatement ps;

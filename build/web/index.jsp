@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Acuarela</title>
         <script src="https://kit.fontawesome.com/6f5ad18ead.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
@@ -20,7 +20,7 @@
             <nav class="navbar" style="background-color: #e3f2fd;">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">Acuarela</a>
-              <a class="nav-link" href="Controlador?accion=Carrito"><i class="fas fa-cart-shopping">(<label style="color: orangered">${contador}</label>)</i>Carrito</a>
+              <a class="nav-link" href="Controlador?accion=Carrito"><i class="fas fa-cart-shopping">(<label style="color: orangered" >${contador}</label>)</i>Carrito</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>

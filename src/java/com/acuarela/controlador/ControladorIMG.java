@@ -1,7 +1,6 @@
 
 package com.acuarela.controlador;
-
-import com.acuarela.modelo.ObraDAO;
+import com.acuarela.modeloDAO.ObraDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
