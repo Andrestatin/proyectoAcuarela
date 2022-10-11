@@ -19,7 +19,7 @@ public class CompraDAO {
 
     public int IdCompra() {
         int idc = 0;
-        String sql = "select max(id_compras) from compras";
+        String sql = "select max(id_compra) from compras";
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
@@ -32,7 +32,7 @@ public class CompraDAO {
         return idc;
     }
     public int guardarCompra(Compra co) {
-        String sql="insert into compras(id_cedula,id_pago,FechaCompra,Monto,Estado) values(?,?,?,?,?)";
+        String sql="insert into compras(id_cedula,id_pago,FechaCompras,Monto,Estado) values(?,?,?,?,?)";
         try {
            con=cn.getConnection();
            ps=con.prepareStatement(sql);
