@@ -32,6 +32,7 @@
         margin-bottom: 30px;
         font-family: 'Lobster Two', cursive;
         text-align: center;
+        }
   
       body {
         background-color: #FFEFCE;

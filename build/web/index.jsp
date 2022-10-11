@@ -16,9 +16,9 @@
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
           <!--Font Lobster-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap" rel="stylesheet">
         <style>
     body {
         background-color: #FFEFCE;
@@ -51,10 +51,10 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="offcanvas offcanvas-end" tabindex="1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Acuarela</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Acuarela</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
@@ -73,12 +73,12 @@
                                 <a class="nav-link" href="Integrantes.jsp">Integrantes</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a style="color: darkgray" class="nav-link dropdown-bs-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a style="color: darkgray; cursor: pointer" class="nav-link dropdown-bs-toggle" data-bs-toggle="dropdown" >
                                     <i class="fas fa-user"></i>${logging}</a>
                                 <ul class="dropdown-menu text-center">
                                     <a class="dropdown-item" href="#"><img src="img/persona.png" alt="80" height="80"/></a>
                                     <a class="dropdown-item" href="#">${persona}</a>
-                                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#inicModal">${correo}</a>
+                                    <a style="color: darkgray" class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#inicModal">${correo}</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="Controlador?accion=MisCompras">Mis Compras</a>
                                     <div class="dropdown-divider"></div>

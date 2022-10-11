@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class Controlador extends HttpServlet {
-
     ObraDAO odao = new ObraDAO();
     Obra o = new Obra();
     CompraDAO compdao = new CompraDAO();
@@ -30,7 +29,7 @@ public class Controlador extends HttpServlet {
     List<Carrito> listaCarrito = new ArrayList<>();
 
     String logging = "Iniciar Sesion";
-    String correo = "Iniciar Sesion";
+    String correo =  "Iniciar Sesion";
     int item = 0;
     int cantidad = 1;
     double subtotal = 0.0;
@@ -50,15 +49,28 @@ public class Controlador extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("logging", logging);
         session.setAttribute("correo", correo);
-        String accion = request.getParameter("accion");
         obras = odao.listar();
+        String accion = request.getParameter("accion");
         
         switch (accion) {
             case "Pagar":
                 agregarCarrito(request);
                 request.getRequestDispatcher("Controlador?accion=Carrito").forward(request, response);
                 break;
-
+            case "Carrito":
+                totalPagar = 0.0;
+                item = 0;
+                //enviar lista del carrito
+                request.setAttribute("carrito", listaCarrito);
+                //enviar monto a pagar
+                for (int i = 0; i < listaCarrito.size(); i++) {
+                    totalPagar = totalPagar + listaCarrito.get(i).getSubtotal();
+                    listaCarrito.get(i).setItem(item + i + 1);
+                }
+                request.setAttribute("totalPagar", totalPagar);
+                request.getRequestDispatcher("Carrito.jsp").forward(request, response);
+                break;
+                
             case "AgregarCarrito":
                 agregarCarrito(request);
                 //mostar la cantidad de elementos que tiene listaCarrito
@@ -96,20 +108,7 @@ public class Controlador extends HttpServlet {
                 }
                 request.getRequestDispatcher("Controlador?accion=Carrito").forward(request, response);
                 break;
-            case "Carrito":
-                totalPagar = 0.0;
-                item = 0;
-                //enviar lista del carrito
-                request.setAttribute("carrito", listaCarrito);
-                //enviar monto a pagar
-                for (int i = 0; i < listaCarrito.size(); i++) {
-                    totalPagar = totalPagar + listaCarrito.get(i).getSubtotal();
-                    listaCarrito.get(i).setItem(item + i + 1);
-                }
-                request.setAttribute("totalPagar", totalPagar);
-                request.getRequestDispatcher("Carrito.jsp").forward(request, response);
-                break;
-
+                
             case "RealizarPago":
                 montopagar = totalPagar;
                 if (clte.getId() != 0 && montopagar > 0) {

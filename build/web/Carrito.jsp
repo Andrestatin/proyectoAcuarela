@@ -100,12 +100,11 @@
             </nav>
     <div class="container mt-4 pt-5">
         <h3>Carrito</h3>
-        <br>
         <div class="row">
             <div class="col-sm-8">
                 <table class="table table-hover">
-                    <thead>
-                        <tr class="table-info">
+                    <thead class="thead-light">
+                        <tr class="table-center">
                             <th>ITEM</th>
                             <th>TITULO</th>
                             <th>DESCRIPCION</th>
@@ -155,7 +154,7 @@
                         <input type="text" value="$${totalPagar}0 Col." readonly="" class="form-control">
                     </div>
                     <div class="card-footer d-grid gap-2">
-                        <a href="#" data-toggle="modal" data-target="#myModalPago" class="btn btn-outline-warning">Realizar Pago</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#myModalPago" class="btn btn-outline-warning">Realizar Pago</a>
                         <a href="Controlador?accion=GenerarCompra" class="btn btn-outline-danger">Generar Compra</a>
                     </div>
                 </div>
@@ -277,6 +276,43 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#inicModal">Iniciar Sesión</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- Pago -->
+        <div class="modal fade" id="myModalPago" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <div class="text-center">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Pagar</h1>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="text-center mt-2">
+                        <img src="img/persona.png" alt="80" height="80"/>
+                    </div>           
+                    <div class="modal-body">
+                        <form action="Controlador">  
+                            <div class="form-group">
+                                <label>Numero de Tarjeta</label>
+                                <input type="text" class="form-control" required placeholder="xxxx-xxxx-xxxx-xxxx">
+                            </div>
+                            <div class="form-group">
+                                <label>Código de Seguridad</label>
+                                <input type="text" class="form-control"   required placeholder="xxxx">
+                            </div>
+                            <div class="form-group">
+                                <label>Monto</label>
+                                <input type="text" name="txtmonto" value="$.${totalPagar}0" class ="form-control h1">
+                            </div>                            
+                            <button type="submit" name="accion" value="RealizarPago" class="btn btn-danger btn-block mt-4">Pagar</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#regModal">Registrarse</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>                  
                     </div>
                 </div>
             </div>

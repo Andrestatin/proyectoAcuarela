@@ -8,10 +8,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Acuarela</title>
+        <script src="https://kit.fontawesome.com/6f5ad18ead.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <!--Font Lobster-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap" rel="stylesheet">
         <link href="CssMateriales.css"/>
         <style>
+                h2, h5{
+        margin-bottom: 30px;
+        font-family: 'Lobster Two', cursive;
+        text-align: center;
+    }
             .img-thumbnail{
                 margin: 10px;
                 width: 350px;
@@ -32,7 +45,7 @@
         <nav class="navbar fixed-top" style="background-color: #e3f2fd">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Acuarela</a>
-                <a class="nav-link" href="Controlador?accion=Carrito"><img src="img/shoping-car.ico" alt="40" height="40">(<label style="color: orangered">${contador}</label>)</i> Carrito</a>
+                <a class="nav-link" href="galeria.jsp"><h3>Materiales</h3></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -53,7 +66,7 @@
                                 <a class="nav-link" href="Materiales.jsp">Materiales</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="./Controlador?accion=Nuevo">Home<span class="sr-only">(current)</span></a>
+                                <a class="nav-link active" aria-current="page" href="./Controlador?accion=Nuevo">Tienda<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="Integrantes.jsp">Integrantes</a>
@@ -126,26 +139,144 @@
             Además de los materiales antes expuestos, para realizar pinturas en acuarela se usan lápices para realizar bocetos antes de aplicar la pintura, cinta de enmascarar para sujetar el papel a la superficie para que este no se doble durante la aplicación de las capas, el líquido enmascarador que se usa para dejar lugares sin pintar y luego de aplicar las capas de acuarela puede retirarse del papel, entre otros.
         </div>
     </div>
-
-    <footer class="text-center text-white mt-4"  style="background-color: #FFEFCE;">
+<!-- Iniciar Sesion -->
+<div class="modal fade" id="inicModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+            <div class="text-center">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Inicia tu Sesión</h1>
+            </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+          <div class="text-center mt-2">
+              <img src="img/persona.png" alt="80" height="80"/>
+          </div>           
+        <div class="modal-body">
+            <form action="Controlador">  
+                            <div class="form-group">
+                                <label>Correo Electrónico</label>
+                                <input type="email" name="txtemail" class="form-control" required placeholder="email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" name="txtpass" class="form-control" pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" title="Debe contener Mayúsculas y minúsculas, al menos un dígito" required placeholder="Ejemplo:Acuarela49">
+                            </div>                                  
+                            <button type="submit" name="accion" value="Validar" class="btn btn-danger btn-block mt-4">Iniciar</button>
+                        </form>
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#regModal">Registrarse</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>                  
+                </div>
+            </div>
+     </div>
+ </div>
+<!-- Registrar -->
+<div class="modal fade" id="regModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+            <div class="text-center">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Si vas a comprar Registrate!</h1>
+            </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+          <div class="text-center mt-2">
+              <img src="img/persona.png" alt="80" height="80"/>
+          </div>           
+        <div class="modal-body">
+            <form action="Controlador">                               
+                            <div class="form-group">
+                                <label>primer Nombre</label>
+                                <input type="text" name="txtnom" class="form-control" required placeholder="Ejemplo: Andrés">
+                            </div>
+                            <div class="form-group">
+                                <label>Segundo Nombre</label>
+                                <input type="text" name="txtnom2" class="form-control" placeholder="Ejemplo: Sait">
+                            </div>
+                            <div class="form-group">
+                                <label>primer Apellido</label>
+                                <input type="text" name="txtapell" class="form-control" required placeholder="Ejemplo: Vega">
+                            </div>
+                            <div class="form-group">
+                                <label>Segundo Apellido</label>
+                                <input type="text" name="txtapell2" class="form-control" placeholder="Ejemplo: Gómez">
+                            </div>
+                            <div class="form-group">
+                                <label>Edad</label>
+                                <input type="number" name="age" class="form-control" min="18" max="90" required placeholder="+18">
+                            </div>
+                            <div class="form-group">
+                                <label>Dirección</label>
+                                <input type="text" name="txtdire" class="form-control" required placeholder="Ejemplo: cra 49 #186-26">
+                                <label>
+                                    Número de Bloque, Casa y/o Apartamento
+                                </label>
+                                <input type="text" name="txtdiredet" class="form-control" placeholder="Ejemplo: torre 8 Apto 302">
+                            </div>
+                            <div class="form-group">
+                                <label>Ciudad</label>
+                                <input type="text" name="txtciu" class="form-control" placeholder="Ejemplo: Leticia">
+                            </div>
+                            <div class="form-group">
+                                <label>Departamento</label>
+                                <input type="text" name="txtdep" class="form-control" placeholder="Ejemplo: Amazonas">
+                            </div>
+                            <div class="form-group">
+                                <p>Tipo de Documento</p>
+                                <select class="form-control" id="dropdown" name="role" required>
+                                    <option value="">(Seleccione su tipo de Documento)</option>
+                                    <option class="ub">Cédula de Ciudadania</option>         
+                                    <option class="ub">Pasaporte tarjeta de extranjeria</option>
+                                    <option class="ub">Cedula de extranjeria</option>
+                                    <option class="ub">Pasaporte</option>
+                                    <option class="ub">Documento de identificacion extranjero</option>
+                                </select>
+                                <label>No</label>
+                                <input type="text" name="txtcc" class="form-control" required placeholder="Ejemplo: 27245362">
+                            </div>
+                            <div class="form-group">
+                                <label>Correo Electrónico</label>
+                                <input type="email" name="txtemail" class="form-control" required placeholder="email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Teléfono</label>
+                                <input type="tel" name="txttel" class="form-control" required placeholder="3173456723">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" name="txtpass" class="form-control" pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" title="Debe contener Mayúsculas y minúsculas, al menos un dígito" required placeholder="Ejemplo:Acuarela49">
+                            </div>                                  
+                            <button type="submit" name="accion" value="Registrar" class="btn btn-danger btn-block mt-4">Crear Cuenta</button>
+                        </form>
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#inicModal">Iniciar Sesión</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+     </div>
+ </div>
+      <footer class="text-center text-white mt-4"  style="background-color: #FFEFCE;">
         <!-- Grid container -->
         <div class="container pt-4">
             <!-- Section: Social media -->
             <section class="mb-4">
                 <!-- Facebook -->
-                <img src="img/logo/facebook.svg" class="ms-4" alt="facebook">
+                <img src="img/logos/facebook.svg" class="ms-4" alt="facebook">
     
                 <!-- Twitter -->
-                <img src="img/logo/twitter.svg" class="ms-4" alt="twitter">
+                <img src="img/logos/twitter.svg" class="ms-4" alt="twitter">
     
                 <!-- Instagram -->
-                <img src="img/logo/instagram.svg"class="ms-4" alt="instagram">
+                <img src="img/logos/instagram.svg"class="ms-4" alt="instagram">
     
                 <!-- Linkedin -->
-                <img src="img/logo/linkedin.svg" class="ms-4"alt="linkedin">
+                <img src="img/logos/linkedin.svg" class="ms-4"alt="linkedin">
                 
                 <!-- Github -->
-                <img src="img/logo/github.svg" class="ms-4" alt="">
+                <img src="img/logos/github.svg" class="ms-4" alt="">
                 <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
                     data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
             </section>
@@ -156,13 +287,13 @@
         <!-- Copyright -->
         <div class="text-center text-dark p-3" style="background-color: #e3f2fd;">
             © 2022 Copyright:
-            <a class="text-dark" href="integrantes.html">Made by: Andres & Co.</a>
+            <a class="text-dark" href="integrantes.jsp">Made by: Andres & Co.</a>
         </div>
         <!-- Copyright -->
     </footer>
-      <!-- JavaScript Bundle with Popper -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
 </body>
 </html>
