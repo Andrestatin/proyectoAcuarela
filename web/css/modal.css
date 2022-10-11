@@ -1,0 +1,54 @@
+/*MODAL*/
+
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(51, 51, 51, 0.6);
+    display: flex;
+
+    /*custom property*/
+    --opacity:0;
+    --pointer: none;
+    /*ocultar modal*/
+    opacity: var(--opacity);
+    pointer-events: var(--pointer);
+}
+/*Se esta mostrando*/
+.modal:target{
+    --opacity: 1;
+    --pointer: unset;
+}
+
+
+.modal__container1{
+    margin: auto;
+    background-color: #fff;
+    width: 60%;
+    height: auto;
+/*    max-width: 600px;
+    max-height: 90%;*/
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+.modal__container2{
+    margin: auto;
+    background-color: #fff;
+    width: 37%;
+    height: auto;
+/*    max-width: 600px;
+    max-height: 90%;*/
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+.modal__img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+

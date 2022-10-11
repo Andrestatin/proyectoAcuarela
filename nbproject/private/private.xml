@@ -5,22 +5,23 @@
             <url>src/java/com/acuarela/controlador/Controlador.java</url>
             <bookmark id="1">
                 <name/>
-                <line>119</line>
+                <line>62</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/tatin/NetBeansProjects/proyectoAcuarela/src/java/com/acuarela/modelo/Carrito.java</file>
+            <file>file:/home/tatin/NetBeansProjects/proyectoAcuarela/src/java/com/acuarela/modelo/Persona.java</file>
+            <file>file:/home/tatin/NetBeansProjects/proyectoAcuarela/web/Inicio.jsp</file>
+            <file>file:/home/tatin/NetBeansProjects/proyectoAcuarela/web/Detalle.jsp</file>
             <file>file:/home/tatin/NetBeansProjects/proyectoAcuarela/web/index.jsp</file>
-            <file>file:/home/tatin/NetBeansProjects/proyectoAcuarela/src/java/com/acuarela/modelo/ObraDAO.java</file>
-            <file>file:/home/tatin/NetBeansProjects/proyectoAcuarela/src/java/com/acuarela/configuracion/Conexion.java</file>
-            <file>file:/home/tatin/NetBeansProjects/proyectoAcuarela/src/java/com/acuarela/modelo/Obra.java</file>
+            <file>file:/home/tatin/NetBeansProjects/proyectoAcuarela/web/galeria.jsp</file>
+            <file>file:/home/tatin/NetBeansProjects/proyectoAcuarela/web/Materiales.jsp</file>
             <file>file:/home/tatin/NetBeansProjects/proyectoAcuarela/src/java/com/acuarela/controlador/Controlador.java</file>
-            <file>file:/home/tatin/NetBeansProjects/proyectoAcuarela/web/js/funciones.js</file>
+            <file>file:/home/tatin/NetBeansProjects/proyectoAcuarela/web/Integrantes.jsp</file>
+            <file>file:/home/tatin/NetBeansProjects/proyectoAcuarela/web/Compras.jsp</file>
             <file>file:/home/tatin/NetBeansProjects/proyectoAcuarela/web/Carrito.jsp</file>
-            <file>file:/home/tatin/NetBeansProjects/proyectoAcuarela/src/java/com/acuarela/controlador/ControladorIMG.java</file>
         </group>
     </open-files>
 </project-private>

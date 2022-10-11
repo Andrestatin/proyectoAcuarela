@@ -38,7 +38,7 @@ public class ObraDAO{
        return o;
    }
     public List listar(){
-        List<Obra>obras=new ArrayList();
+        List obras=new ArrayList();
         String sql="select * from obra";
         try {
             con=cn.getConnection();

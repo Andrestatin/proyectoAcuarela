@@ -1,20 +1,22 @@
 package com.acuarela.modelo;
 public class Persona {
-    private int id;
-    private String nombre;
-    private String apellido;
-    private String direccion;
-    private String ciudad;
-    private String departamento;
-    private String correo;
-    private String telefono;
-    private String password;
+    int id;
+    String cedula;
+    String nombre;
+    String apellido;
+    String direccion;
+    String ciudad;
+    String departamento;
+    String correo;
+    String telefono;
+    String password;
 
     public Persona() {
     }
 
-    public Persona(int id, String nombre, String apellido, String direccion, String ciudad, String departamento, String correo, String telefono, String password) {
+    public Persona(int id, String cedula,String nombre, String apellido, String direccion, String ciudad, String departamento, String correo, String telefono, String password) {
         this.id = id;
+        this.cedula=cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;
@@ -31,6 +33,14 @@ public class Persona {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
 
     public String getNombre() {
